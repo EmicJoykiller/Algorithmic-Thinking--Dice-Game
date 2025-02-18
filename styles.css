@@ -7,45 +7,49 @@
 }
 
 :root {
-  --dark-grey: #1b1b32;
-  --light-grey: #f5f6f7;
-  --black: #000;
+  --dark-blue: #2a2e38;
+  --light-blue: #c0d6e4;
   --white: #fff;
-  --grey: #3b3b4f;
-  --golden-yellow: #fecc4c;
-  --yellow: #ffcc4c;
-  --gold: #feac32;
-  --orange: #ffac33;
-  --dark-orange: #f89808;
+  --grey: #4a4a63;
+  --teal: #1abc9c;
+  --gold: #f39c12;
+  --dark-gold: #e67e22;
 }
 
 body {
-  background-color: var(--dark-grey);
+  background-color: var(--dark-blue);
+  font-family: 'Arial', sans-serif;
+  color: var(--white);
 }
 
 header {
-  color: var(--light-grey);
   text-align: center;
+  margin-top: 50px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin: 25px 0;
+  font-size: 3rem;
+  color: var(--teal);
 }
 
 .rules-container {
   display: none;
-  background-color: var(--light-grey);
-  color: var(--black);
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
   width: 50%;
   margin: 20px auto;
-  height: 300px;
-  border-radius: 10px;
-  overflow-y: scroll;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.rules-container h2 {
+  color: var(--teal);
 }
 
 .rules-container ul {
   list-style-type: none;
+  margin: 15px 0;
 }
 
 .points {
@@ -53,15 +57,16 @@ h1 {
 }
 
 main {
-  background-color: var(--light-grey);
-  padding: 20px;
+  background-color: var(--light-blue);
+  padding: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 1rem;
-  margin: auto;
+  gap: 2rem;
+  margin: 50px auto;
   justify-items: center;
-  width: 50%;
-  border-radius: 10px;
+  border-radius: 12px;
+  width: 60%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #dice {
@@ -71,16 +76,23 @@ main {
 }
 
 .die {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   text-align: center;
-  margin-right: 15px;
-  border: 4px solid var(--black);
-  padding: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rounds-text {
   text-align: center;
+  font-size: 1.1rem;
 }
 
 input[type="radio"]:disabled + label {
@@ -89,33 +101,33 @@ input[type="radio"]:disabled + label {
 
 #score-history {
   margin-top: 15px;
-  text-align: center;
   list-style-position: inside;
 }
 
 .btn {
   cursor: pointer;
   width: 200px;
-  margin: 10px 0 10px 0.5rem;
-  color: var(--black);
+  padding: 12px;
   background-color: var(--gold);
-  background-image: linear-gradient(var(--golden-yellow), var(--orange));
-  border-color: var(--gold);
-  border-width: 3px;
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover:enabled {
-  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+.btn:hover {
+  background-color: var(--dark-gold);
 }
 
 @media (max-width: 992px) {
   main {
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media (max-width: 500px) {
   .btn {
-    width: 120px;
+    width: 160px;
   }
 }
